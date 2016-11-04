@@ -12,7 +12,6 @@ import (
 
 var (
 	ENV_KUBERNETES_URL = os.Getenv("KUBERNETES_URL")
-	ENV_KUBERNETES_NAMESPACE = os.Getenv("KUBERNETES_NAMESPACE")
 	ENV_KUBERNETES_BEARER_TOKEN = os.Getenv("KUBERNETES_BEARER_TOKEN")
 )
 
@@ -65,20 +64,21 @@ type ViewClusterController struct {
 func (c *ViewClusterController) Get() {	
 	fmt.Printf("ViewClusterController \n")
 	
+	namespace := c.GetString("namespace")
 	
 	kubernetesClient := getKubernetesClient()
 	
-	pods, err := kubernetesClient.Core().Pods(ENV_KUBERNETES_NAMESPACE).List(v1.ListOptions{})
+	pods, err := kubernetesClient.Core().Pods(namespace).List(v1.ListOptions{})
 	if err != nil {
 		panic(err.Error())
 	}
 
-	services, err := kubernetesClient.Core().Services(ENV_KUBERNETES_NAMESPACE).List(v1.ListOptions{})
+	services, err := kubernetesClient.Core().Services(namespace).List(v1.ListOptions{})
 	if err != nil {
 		panic(err.Error())
 	} 
 	
-	c.Data["namespace"] = ENV_KUBERNETES_NAMESPACE
+	c.Data["namespace"] = namespace
 
 	c.Data["services"] = services
 	c.Data["servicelist"] = services.Items
