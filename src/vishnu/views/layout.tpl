@@ -77,27 +77,31 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
+                        	<form action="/setnamespace" method="get">                        
                             <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <span class="input-group-btn">
+                            	
+                                <input type="text" disabled class="form-control" placeholder="Namespace : {{ .namespace }}">
+                                <!-- span class="input-group-btn">
                                 <button class="btn btn-default" type="button">
                                     <i class="fa fa-search"></i>
-                                </button>
+                                </button -->
+                                
                             </span>
                             </div>
+                            </form>
                             <!-- /input-group -->
+                        </li>
+
+                        <li>
+                            <a href="/viewcluster"><i class="fa fa-cloud fa-fw"></i> My Cluster</a>
                         </li>
 
                         <li>
                             <a href="/createapplist"><i class="fa fa-files-o fa-fw"></i> Create App</a>
                         </li>
 
-                        <li>
+                        <!-- li>
                             <a href="/applications"><i class="fa fa-laptop fa-fw"></i> Applications </a>
-                        </li>
-
-                        <li>
-                            <a href="/viewcluster"><i class="fa fa-cloud fa-fw"></i> My Cluster</a>
                         </li>
 
                         <li>
@@ -118,7 +122,7 @@
 
                         <li>
                             <a href="/settings"><i class="fa fa-cog fa-fw"></i> Settings (TBD)</a> 
-                        </li>
+                        </li --!>
                         
                     </ul>
                 </div>

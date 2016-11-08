@@ -6,7 +6,7 @@ import (
 )
 
 func init() {
-    beego.Router("/", &controllers.MainController{})
+    beego.Router("/", &controllers.ViewClusterController{})
     beego.Router("/blank", &controllers.BlankController{})
     beego.Router("/viewcluster", &controllers.ViewClusterController{})
 }

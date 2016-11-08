@@ -299,6 +299,10 @@
 			"Rev": "a8b38433e35b65ba247bb267317037dee1b70cea"
 		},
 		{
+			"ImportPath": "golang.org/x/text/internal",
+			"Rev": "a8b38433e35b65ba247bb267317037dee1b70cea"
+		},
+		{
 			"ImportPath": "golang.org/x/text/internal/tag",
 			"Rev": "a8b38433e35b65ba247bb267317037dee1b70cea"
 		},

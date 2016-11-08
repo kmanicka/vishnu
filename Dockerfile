@@ -11,4 +11,7 @@ RUN /go/bin/godep restore
 
 EXPOSE 8080
 
+# TODO make this configurable later.
+ENV KUBERNETES_NAMESPACE kman
+
 ENTRYPOINT go run main.go 
